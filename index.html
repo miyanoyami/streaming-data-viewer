@@ -13,10 +13,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;800&display=swap" rel="stylesheet">
   <style>
-    .m-plus-1p-bold {
+    .m-plus-1p-bold-bk {
       font-family: "M PLUS 1p", sans-serif;
       font-weight: 700;
       font-style: normal;
+      font-size: 96px;
+    }
+
+    .m-plus-1p-bold-az {
+      font-family: "M PLUS 1p", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 96px;
+      color: azure;
+    }
+
+    .m-plus-1p-bold-wh {
+      font-family: "M PLUS 1p", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 96px;
+      color: white;
     }
   </style>
 </head>
@@ -38,16 +55,30 @@
 
       const tb = [];
       for (const [i, user] of data.entries()) {
-        tb.push(<tr><td>{user.name}</td><td>{user.msg}</td></tr>);
+        tb.push(<tr><td>{user.name}: </td><td>{user.msg}</td></tr>);
       }
       return (
         <div>
-          <table class="table m-plus-1p-bold">
+          <table class="table m-plus-1p-bold-bk">
+            <tbody>
+              {tb}
+            </tbody>
+          </table>
+
+          <table class="table m-plus-1p-bold-az">
+            <tbody>
+              {tb}
+            </tbody>
+          </table>
+
+
+          <table class="table m-plus-1p-bold-wh">
             <tbody>
               {tb}
             </tbody>
           </table>
         </div>
+
       )
     };
 
