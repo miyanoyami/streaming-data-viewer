@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>タイトル</title>
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;800&display=swap" rel="stylesheet">
+  <style>
+    .m-plus-1p-bold {
+      font-family: "M PLUS 1p", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const App = () => {
+      const data = [
+        {
+          "name": 'やみ',
+          "msg": "0/0",
+        },
+        {
+          "name": 'めら',
+          "msg": "0/0",
+        }
+      ];
+
+      const tb = [];
+      for (const [i, user] of data.entries()) {
+        tb.push(<tr><td>{user.name}</td><td>{user.msg}</td></tr>);
+      }
+      return (
+        <div>
+          <table class="table m-plus-1p-bold">
+            <tbody>
+              {tb}
+            </tbody>
+          </table>
+        </div>
+      )
+    };
+
+    const container = document.getElementById('root')
+
+    const root = ReactDOM.createRoot(container)
+    root.render(<App />)
+  </script>
+</body>
+
+</html>
